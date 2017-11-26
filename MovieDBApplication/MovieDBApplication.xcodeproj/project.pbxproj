@@ -14,6 +14,10 @@
 		758DC0B71FCB29BB00D79DCF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 758DC0B61FCB29BB00D79DCF /* main.m */; };
 		758DC0C11FCB29BB00D79DCF /* MovieDBApplicationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 758DC0C01FCB29BB00D79DCF /* MovieDBApplicationTests.m */; };
 		758DC0CC1FCB29BB00D79DCF /* MovieDBApplicationUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 758DC0CB1FCB29BB00D79DCF /* MovieDBApplicationUITests.m */; };
+		758DC0DB1FCB2A6200D79DCF /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 758DC0DA1FCB2A6200D79DCF /* BaseViewController.m */; };
+		758DC0E01FCB2B3E00D79DCF /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 758DC0DF1FCB2B3E00D79DCF /* Constants.m */; };
+		758DC0E31FCB32A700D79DCF /* GetMovieDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 758DC0E21FCB32A700D79DCF /* GetMovieDetail.m */; };
+		758DC0E71FCB32CB00D79DCF /* Movie.m in Sources */ = {isa = PBXBuildFile; fileRef = 758DC0E61FCB32CB00D79DCF /* Movie.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +53,14 @@
 		758DC0C71FCB29BB00D79DCF /* MovieDBApplicationUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MovieDBApplicationUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		758DC0CB1FCB29BB00D79DCF /* MovieDBApplicationUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MovieDBApplicationUITests.m; sourceTree = "<group>"; };
 		758DC0CD1FCB29BB00D79DCF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		758DC0D91FCB2A6200D79DCF /* BaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
+		758DC0DA1FCB2A6200D79DCF /* BaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
+		758DC0DE1FCB2B3E00D79DCF /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		758DC0DF1FCB2B3E00D79DCF /* Constants.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
+		758DC0E11FCB32A700D79DCF /* GetMovieDetail.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GetMovieDetail.h; sourceTree = "<group>"; };
+		758DC0E21FCB32A700D79DCF /* GetMovieDetail.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GetMovieDetail.m; sourceTree = "<group>"; };
+		758DC0E51FCB32CB00D79DCF /* Movie.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Movie.h; sourceTree = "<group>"; };
+		758DC0E61FCB32CB00D79DCF /* Movie.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Movie.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +111,7 @@
 		758DC0A61FCB29BB00D79DCF /* MovieDBApplication */ = {
 			isa = PBXGroup;
 			children = (
+				758DC0E41FCB32AD00D79DCF /* Models */,
 				758DC0A71FCB29BB00D79DCF /* AppDelegate.h */,
 				758DC0A81FCB29BB00D79DCF /* AppDelegate.m */,
 				758DC0AA1FCB29BB00D79DCF /* ViewController.h */,
@@ -107,6 +120,10 @@
 				758DC0B21FCB29BB00D79DCF /* LaunchScreen.storyboard */,
 				758DC0B51FCB29BB00D79DCF /* Info.plist */,
 				758DC0B61FCB29BB00D79DCF /* main.m */,
+				758DC0D91FCB2A6200D79DCF /* BaseViewController.h */,
+				758DC0DA1FCB2A6200D79DCF /* BaseViewController.m */,
+				758DC0DE1FCB2B3E00D79DCF /* Constants.h */,
+				758DC0DF1FCB2B3E00D79DCF /* Constants.m */,
 			);
 			path = MovieDBApplication;
 			sourceTree = "<group>";
@@ -127,6 +144,17 @@
 				758DC0CD1FCB29BB00D79DCF /* Info.plist */,
 			);
 			path = MovieDBApplicationUITests;
+			sourceTree = "<group>";
+		};
+		758DC0E41FCB32AD00D79DCF /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				758DC0E11FCB32A700D79DCF /* GetMovieDetail.h */,
+				758DC0E21FCB32A700D79DCF /* GetMovieDetail.m */,
+				758DC0E51FCB32CB00D79DCF /* Movie.h */,
+				758DC0E61FCB32CB00D79DCF /* Movie.m */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,7 +286,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				758DC0E01FCB2B3E00D79DCF /* Constants.m in Sources */,
 				758DC0AC1FCB29BB00D79DCF /* ViewController.m in Sources */,
+				758DC0E71FCB32CB00D79DCF /* Movie.m in Sources */,
+				758DC0E31FCB32A700D79DCF /* GetMovieDetail.m in Sources */,
+				758DC0DB1FCB2A6200D79DCF /* BaseViewController.m in Sources */,
 				758DC0B71FCB29BB00D79DCF /* main.m in Sources */,
 				758DC0A91FCB29BB00D79DCF /* AppDelegate.m in Sources */,
 			);
@@ -500,6 +532,7 @@
 				758DC0D21FCB29BB00D79DCF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		758DC0D31FCB29BB00D79DCF /* Build configuration list for PBXNativeTarget "MovieDBApplicationTests" */ = {
 			isa = XCConfigurationList;
@@ -508,6 +541,7 @@
 				758DC0D51FCB29BB00D79DCF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		758DC0D61FCB29BB00D79DCF /* Build configuration list for PBXNativeTarget "MovieDBApplicationUITests" */ = {
 			isa = XCConfigurationList;
@@ -516,6 +550,7 @@
 				758DC0D81FCB29BB00D79DCF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
