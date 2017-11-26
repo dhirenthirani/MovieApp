@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "MovieDetailViewController.h"
 
 @interface ViewController ()
 
@@ -17,6 +18,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
+    MovieDetailViewController *mdVC = [[MovieDetailViewController alloc] init];
+    [self.navigationController pushViewController:mdVC animated:YES];
 }
 
 

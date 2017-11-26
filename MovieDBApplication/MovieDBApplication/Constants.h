@@ -7,12 +7,16 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 #define H(v)                    v.frame.size.height
 #define W(v)                    v.frame.size.width
 #define BOTTOM(v)               v.frame.origin.y + v.frame.size.height
 
 #define SIDE_PADDING            12
+
 @interface Constants : NSObject
+
++ (CGFloat)navigationBarHeight;
 
 @end

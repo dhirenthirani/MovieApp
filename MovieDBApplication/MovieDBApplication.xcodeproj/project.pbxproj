@@ -18,6 +18,8 @@
 		758DC0E01FCB2B3E00D79DCF /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 758DC0DF1FCB2B3E00D79DCF /* Constants.m */; };
 		758DC0E31FCB32A700D79DCF /* GetMovieDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 758DC0E21FCB32A700D79DCF /* GetMovieDetail.m */; };
 		758DC0E71FCB32CB00D79DCF /* Movie.m in Sources */ = {isa = PBXBuildFile; fileRef = 758DC0E61FCB32CB00D79DCF /* Movie.m */; };
+		758DC0EB1FCB33D700D79DCF /* MovieDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 758DC0EA1FCB33D700D79DCF /* MovieDetailViewController.m */; };
+		758DC0EE1FCB358900D79DCF /* UIImageView+Download.m in Sources */ = {isa = PBXBuildFile; fileRef = 758DC0ED1FCB358900D79DCF /* UIImageView+Download.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +63,10 @@
 		758DC0E21FCB32A700D79DCF /* GetMovieDetail.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GetMovieDetail.m; sourceTree = "<group>"; };
 		758DC0E51FCB32CB00D79DCF /* Movie.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Movie.h; sourceTree = "<group>"; };
 		758DC0E61FCB32CB00D79DCF /* Movie.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Movie.m; sourceTree = "<group>"; };
+		758DC0E91FCB33D700D79DCF /* MovieDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MovieDetailViewController.h; sourceTree = "<group>"; };
+		758DC0EA1FCB33D700D79DCF /* MovieDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MovieDetailViewController.m; sourceTree = "<group>"; };
+		758DC0EC1FCB358900D79DCF /* UIImageView+Download.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImageView+Download.h"; sourceTree = "<group>"; };
+		758DC0ED1FCB358900D79DCF /* UIImageView+Download.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+Download.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +117,7 @@
 		758DC0A61FCB29BB00D79DCF /* MovieDBApplication */ = {
 			isa = PBXGroup;
 			children = (
+				758DC0E81FCB33B900D79DCF /* ViewControllers */,
 				758DC0E41FCB32AD00D79DCF /* Models */,
 				758DC0A71FCB29BB00D79DCF /* AppDelegate.h */,
 				758DC0A81FCB29BB00D79DCF /* AppDelegate.m */,
@@ -124,6 +131,8 @@
 				758DC0DA1FCB2A6200D79DCF /* BaseViewController.m */,
 				758DC0DE1FCB2B3E00D79DCF /* Constants.h */,
 				758DC0DF1FCB2B3E00D79DCF /* Constants.m */,
+				758DC0EC1FCB358900D79DCF /* UIImageView+Download.h */,
+				758DC0ED1FCB358900D79DCF /* UIImageView+Download.m */,
 			);
 			path = MovieDBApplication;
 			sourceTree = "<group>";
@@ -155,6 +164,15 @@
 				758DC0E61FCB32CB00D79DCF /* Movie.m */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		758DC0E81FCB33B900D79DCF /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				758DC0E91FCB33D700D79DCF /* MovieDetailViewController.h */,
+				758DC0EA1FCB33D700D79DCF /* MovieDetailViewController.m */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -286,6 +304,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				758DC0EE1FCB358900D79DCF /* UIImageView+Download.m in Sources */,
+				758DC0EB1FCB33D700D79DCF /* MovieDetailViewController.m in Sources */,
 				758DC0E01FCB2B3E00D79DCF /* Constants.m in Sources */,
 				758DC0AC1FCB29BB00D79DCF /* ViewController.m in Sources */,
 				758DC0E71FCB32CB00D79DCF /* Movie.m in Sources */,

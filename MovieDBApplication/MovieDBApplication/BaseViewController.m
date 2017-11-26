@@ -33,7 +33,8 @@
 }
 
 - (void)createOverLayView {
-    self.overLayView = [[UIView alloc] initWithFrame:CGRectMake(0, 64, W(self.view), H(self.view) - 64)];
+    self.overLayView = [[UIView alloc] initWithFrame:CGRectMake(0, [Constants navigationBarHeight], W(self.view), H(self.view) - [Constants navigationBarHeight])];
+    [self.overLayView setBackgroundColor:[UIColor whiteColor]];
     [self.view addSubview:self.overLayView];
 }
 - (void)createLoader {
@@ -66,6 +67,7 @@
 }
 
 - (void)showLoader {
+    [self.view bringSubviewToFront:self.overLayView];
     [self.emptyView setHidden:YES];
     [self.loader setHidden:NO];
     [self.overLayView setHidden:NO];
@@ -73,12 +75,14 @@
 }
 
 - (void)showEmptyView {
+    [self.view bringSubviewToFront:self.overLayView];
     [self.overLayView setHidden:NO];
     [self.emptyView setHidden:NO];
     [self.loader setHidden:YES];
 }
 
 - (void)hideEmptyViewAndLoader {
+    [self.view sendSubviewToBack:self.overLayView];
     [self.overLayView setHidden:YES];
     [self.emptyView setHidden:YES];
     [self.loader setHidden:YES];
@@ -88,15 +92,5 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

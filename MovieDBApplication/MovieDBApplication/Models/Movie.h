@@ -17,6 +17,7 @@
 @property (nonatomic, strong) NSString *releaseDate;
 @property (nonatomic, strong) NSNumber *userRating;
 @property (nonatomic, strong) NSNumber *movieId;
+@property (nonatomic, strong) NSString *movieStatus;
 
 - (void)parseResponseObject:(NSDictionary *)responseObject;
 

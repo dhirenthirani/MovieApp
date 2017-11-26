@@ -10,5 +10,8 @@
 
 @implementation Constants
 
++ (CGFloat)navigationBarHeight {
+    return (44 + [[UIApplication sharedApplication] statusBarFrame].size.height);
+}
 
 @end

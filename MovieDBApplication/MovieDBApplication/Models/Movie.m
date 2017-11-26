@@ -21,6 +21,7 @@
     NSString *urlString = [responseObject objectForKey:@"poster_path"];
     
     self.imageUrl = [NSString stringWithFormat:@"https://image.tmdb.org/t/p/w500%@", urlString];
+    self.movieStatus = [responseObject objectForKey:@"status"];
 }
 
 @end
