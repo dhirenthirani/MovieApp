@@ -65,17 +65,17 @@
 }
 
 - (void)createImageView {
-    self.imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, W(self.scrollView), H(self.scrollView)/2)];
+    self.imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, W(self.scrollView), 210)];
     [self.imageView setBackgroundColor:[UIColor grayColor]];
     [self.imageView setImageWithUrl:[NSURL URLWithString:self.getMovieDetailObject.movie.imageUrl]];
-    [self.imageView setContentMode:UIViewContentModeScaleAspectFit];
+    [self.imageView setContentMode:UIViewContentModeScaleAspectFill];
     [self.scrollView addSubview:self.imageView];
     
-    CAGradientLayer *gradient = [[CAGradientLayer alloc] init];
-    gradient.frame = self.imageView.frame;
-    gradient.colors = @[(id)[[UIColor clearColor] CGColor], (id)[[UIColor blackColor] CGColor]];
-    gradient.locations = @[@0.5, @1.0];
-    [self.imageView.layer insertSublayer:gradient atIndex:0];
+//    CAGradientLayer *gradient = [[CAGradientLayer alloc] init];
+//    gradient.frame = self.imageView.frame;
+//    gradient.colors = @[(id)[[UIColor clearColor] CGColor], (id)[[UIColor blackColor] CGColor]];
+//    gradient.locations = @[@0.5, @1.0];
+//    [self.imageView.layer insertSublayer:gradient atIndex:0];
 }
 
 - (void)createTitleLabel {

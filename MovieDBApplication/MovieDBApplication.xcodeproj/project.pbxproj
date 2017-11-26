@@ -20,6 +20,10 @@
 		758DC0E71FCB32CB00D79DCF /* Movie.m in Sources */ = {isa = PBXBuildFile; fileRef = 758DC0E61FCB32CB00D79DCF /* Movie.m */; };
 		758DC0EB1FCB33D700D79DCF /* MovieDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 758DC0EA1FCB33D700D79DCF /* MovieDetailViewController.m */; };
 		758DC0EE1FCB358900D79DCF /* UIImageView+Download.m in Sources */ = {isa = PBXBuildFile; fileRef = 758DC0ED1FCB358900D79DCF /* UIImageView+Download.m */; };
+		758DC0F11FCB412A00D79DCF /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 758DC0F01FCB412A00D79DCF /* HomeViewController.m */; };
+		758DC0F41FCB415900D79DCF /* GetMovieList.m in Sources */ = {isa = PBXBuildFile; fileRef = 758DC0F31FCB415900D79DCF /* GetMovieList.m */; };
+		758DC0F81FCB49A400D79DCF /* MovieTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 758DC0F71FCB49A400D79DCF /* MovieTableViewCell.m */; };
+		758DC0FB1FCB618800D79DCF /* UILoaderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 758DC0FA1FCB618800D79DCF /* UILoaderTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +71,14 @@
 		758DC0EA1FCB33D700D79DCF /* MovieDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MovieDetailViewController.m; sourceTree = "<group>"; };
 		758DC0EC1FCB358900D79DCF /* UIImageView+Download.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImageView+Download.h"; sourceTree = "<group>"; };
 		758DC0ED1FCB358900D79DCF /* UIImageView+Download.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+Download.m"; sourceTree = "<group>"; };
+		758DC0EF1FCB412A00D79DCF /* HomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		758DC0F01FCB412A00D79DCF /* HomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		758DC0F21FCB415900D79DCF /* GetMovieList.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GetMovieList.h; sourceTree = "<group>"; };
+		758DC0F31FCB415900D79DCF /* GetMovieList.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GetMovieList.m; sourceTree = "<group>"; };
+		758DC0F61FCB49A400D79DCF /* MovieTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MovieTableViewCell.h; sourceTree = "<group>"; };
+		758DC0F71FCB49A400D79DCF /* MovieTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MovieTableViewCell.m; sourceTree = "<group>"; };
+		758DC0F91FCB618800D79DCF /* UILoaderTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UILoaderTableViewCell.h; sourceTree = "<group>"; };
+		758DC0FA1FCB618800D79DCF /* UILoaderTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UILoaderTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +129,7 @@
 		758DC0A61FCB29BB00D79DCF /* MovieDBApplication */ = {
 			isa = PBXGroup;
 			children = (
+				758DC0F51FCB498400D79DCF /* CustomCells */,
 				758DC0E81FCB33B900D79DCF /* ViewControllers */,
 				758DC0E41FCB32AD00D79DCF /* Models */,
 				758DC0A71FCB29BB00D79DCF /* AppDelegate.h */,
@@ -162,6 +175,8 @@
 				758DC0E21FCB32A700D79DCF /* GetMovieDetail.m */,
 				758DC0E51FCB32CB00D79DCF /* Movie.h */,
 				758DC0E61FCB32CB00D79DCF /* Movie.m */,
+				758DC0F21FCB415900D79DCF /* GetMovieList.h */,
+				758DC0F31FCB415900D79DCF /* GetMovieList.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -171,8 +186,21 @@
 			children = (
 				758DC0E91FCB33D700D79DCF /* MovieDetailViewController.h */,
 				758DC0EA1FCB33D700D79DCF /* MovieDetailViewController.m */,
+				758DC0EF1FCB412A00D79DCF /* HomeViewController.h */,
+				758DC0F01FCB412A00D79DCF /* HomeViewController.m */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		758DC0F51FCB498400D79DCF /* CustomCells */ = {
+			isa = PBXGroup;
+			children = (
+				758DC0F61FCB49A400D79DCF /* MovieTableViewCell.h */,
+				758DC0F71FCB49A400D79DCF /* MovieTableViewCell.m */,
+				758DC0F91FCB618800D79DCF /* UILoaderTableViewCell.h */,
+				758DC0FA1FCB618800D79DCF /* UILoaderTableViewCell.m */,
+			);
+			path = CustomCells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -307,11 +335,15 @@
 				758DC0EE1FCB358900D79DCF /* UIImageView+Download.m in Sources */,
 				758DC0EB1FCB33D700D79DCF /* MovieDetailViewController.m in Sources */,
 				758DC0E01FCB2B3E00D79DCF /* Constants.m in Sources */,
+				758DC0FB1FCB618800D79DCF /* UILoaderTableViewCell.m in Sources */,
+				758DC0F41FCB415900D79DCF /* GetMovieList.m in Sources */,
+				758DC0F11FCB412A00D79DCF /* HomeViewController.m in Sources */,
 				758DC0AC1FCB29BB00D79DCF /* ViewController.m in Sources */,
 				758DC0E71FCB32CB00D79DCF /* Movie.m in Sources */,
 				758DC0E31FCB32A700D79DCF /* GetMovieDetail.m in Sources */,
 				758DC0DB1FCB2A6200D79DCF /* BaseViewController.m in Sources */,
 				758DC0B71FCB29BB00D79DCF /* main.m in Sources */,
+				758DC0F81FCB49A400D79DCF /* MovieTableViewCell.m in Sources */,
 				758DC0A91FCB29BB00D79DCF /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

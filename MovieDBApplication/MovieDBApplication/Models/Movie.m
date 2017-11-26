@@ -17,11 +17,13 @@
     self.releaseDate = [responseObject objectForKey:@"release_date"];
     self.tagline = [responseObject objectForKey:@"tagline"];
     self.userRating = [responseObject objectForKey:@"vote_average"];
-    
-    NSString *urlString = [responseObject objectForKey:@"poster_path"];
-    
-    self.imageUrl = [NSString stringWithFormat:@"https://image.tmdb.org/t/p/w500%@", urlString];
     self.movieStatus = [responseObject objectForKey:@"status"];
+    
+    NSString *posterUrl = [responseObject objectForKey:@"poster_path"];
+    self.posterImageUrl = [NSString stringWithFormat:@"https://image.tmdb.org/t/p/original%@", posterUrl];
+    
+    NSString *backDropPath = [responseObject objectForKey:@"backdrop_path"];
+    self.imageUrl = [NSString stringWithFormat:@"https://image.tmdb.org/t/p/original%@", backDropPath];
 }
 
 @end

@@ -7,12 +7,12 @@
 //
 
 #import "AppDelegate.h"
-#import "ViewController.h"
+#import "HomeViewController.h"
 
 @interface AppDelegate ()
 
 @property (nonatomic, strong) UINavigationController *navController;
-@property (nonatomic, strong) ViewController *viewController;
+@property (nonatomic, strong) HomeViewController *viewController;
 
 @end
 
@@ -24,7 +24,7 @@
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
-    self.viewController = [[ViewController alloc] init];
+    self.viewController = [[HomeViewController alloc] init];
     self.navController = [[UINavigationController alloc] initWithRootViewController:self.viewController];
     
     [self.window setBackgroundColor:[UIColor whiteColor]];

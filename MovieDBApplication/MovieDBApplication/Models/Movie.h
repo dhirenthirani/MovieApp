@@ -18,6 +18,7 @@
 @property (nonatomic, strong) NSNumber *userRating;
 @property (nonatomic, strong) NSNumber *movieId;
 @property (nonatomic, strong) NSString *movieStatus;
+@property (nonatomic, strong) NSString *posterImageUrl;
 
 - (void)parseResponseObject:(NSDictionary *)responseObject;
 
