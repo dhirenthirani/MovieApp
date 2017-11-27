@@ -87,12 +87,12 @@ NSInteger const fontSize = 15;
 - (void)createImageView {
     self.movieImageView1 = [[UIImageView alloc] init];
     [self.movieImageView1 setBackgroundColor:[UIColor grayColor]];
-    [self.movieImageView1 setContentMode:UIViewContentModeScaleAspectFit];
+    [self.movieImageView1 setContentMode:UIViewContentModeScaleAspectFill];
     [self.containerView1 addSubview:self.movieImageView1];
     
     self.movieImageView2 = [[UIImageView alloc] init];
     [self.movieImageView2 setBackgroundColor:[UIColor grayColor]];
-    [self.movieImageView2 setContentMode:UIViewContentModeScaleAspectFit];
+    [self.movieImageView2 setContentMode:UIViewContentModeScaleAspectFill];
     [self.containerView2 addSubview:self.movieImageView2];
 }
 
@@ -136,7 +136,7 @@ NSInteger const fontSize = 15;
     
     CGSize labelSize = [self.movieName1.text boundingRectWithSize:CGSizeMake((width - 2*betweenPadding), CGFLOAT_MAX) options:(NSStringDrawingUsesFontLeading|NSStringDrawingUsesLineFragmentOrigin) attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:fontSize]} context:nil].size;
     
-    [self.movieName1 setFrame:CGRectMake(betweenPadding, BOTTOM(self.movieImageView1), W(self.containerView1) - 2*betweenPadding, labelSize.height)];
+    [self.movieName1 setFrame:CGRectMake(betweenPadding, BOTTOM(self.movieImageView1) + betweenPadding, W(self.containerView1) - 2*betweenPadding, labelSize.height)];
     
     
     [self.containerView2 setFrame:CGRectMake(AFTER(self.containerView1) + padding, padding, width, H(self.contentView) - 2*padding)];
@@ -144,7 +144,7 @@ NSInteger const fontSize = 15;
     
     CGSize labelSize2 = [self.movieName2.text boundingRectWithSize:CGSizeMake((width - 2*betweenPadding), CGFLOAT_MAX) options:(NSStringDrawingUsesFontLeading|NSStringDrawingUsesLineFragmentOrigin) attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:fontSize]} context:nil].size;
     
-    [self.movieName2 setFrame:CGRectMake(betweenPadding, BOTTOM(self.movieImageView2), W(self.containerView2) - 2*betweenPadding, labelSize2.height)];
+    [self.movieName2 setFrame:CGRectMake(betweenPadding, BOTTOM(self.movieImageView2) + betweenPadding, W(self.containerView2) - 2*betweenPadding, labelSize2.height)];
 }
 
 - (void)prepareForReuse {
@@ -175,6 +175,7 @@ NSInteger const fontSize = 15;
     
     height += 2*padding;
     height += imageSize;
+    height += betweenPadding;
     
     CGSize labelSize1 = [movie1.name boundingRectWithSize:CGSizeMake(width, CGFLOAT_MAX) options:(NSStringDrawingUsesFontLeading|NSStringDrawingUsesLineFragmentOrigin) attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:fontSize]} context:nil].size;
     
