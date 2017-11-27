@@ -19,10 +19,10 @@
     self.userRating = [responseObject objectForKey:@"vote_average"];
     self.movieStatus = [responseObject objectForKey:@"status"];
     
-    NSString *posterUrl = [responseObject objectForKey:@"poster_path"];
-    self.posterImageUrl = [NSString stringWithFormat:@"https://image.tmdb.org/t/p/original%@", posterUrl];
-    
     NSString *backDropPath = [responseObject objectForKey:@"backdrop_path"];
+
+    self.posterImageUrl = [NSString stringWithFormat:@"https://image.tmdb.org/t/p/w300%@", backDropPath];
+    
     self.imageUrl = [NSString stringWithFormat:@"https://image.tmdb.org/t/p/original%@", backDropPath];
 }
 

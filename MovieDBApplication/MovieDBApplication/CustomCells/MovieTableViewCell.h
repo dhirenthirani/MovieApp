@@ -9,9 +9,17 @@
 #import <UIKit/UIKit.h>
 #import "Movie.h"
 
+@protocol MovieTableViewCellDelegate <NSObject>
+
+- (void)didTapMovie:(Movie *)movie;
+
+@end
+
 @interface MovieTableViewCell : UITableViewCell
 
-- (void)setData:(Movie *)movie;
-+ (CGFloat)getHeightForMovie:(Movie *)movie;
+@property (nonatomic, weak) id<MovieTableViewCellDelegate> delegate;
+
+- (void)setDataForMovie1:(Movie *)movie1 movie2:(Movie *)movie2;
++ (CGFloat)getHeightForMovie1:(Movie *)movie1 movie2:(Movie *)movie2;
 
 @end

@@ -77,9 +77,6 @@
         self.task = NSURLSession.sharedSession;
         [[self.task dataTaskWithRequest:urlRequest completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
             
-            NSString *myString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-            NSLog(@"Data received: %@", myString);
-            
             if (!error && data) {
                 NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
                 

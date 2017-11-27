@@ -15,7 +15,7 @@
 #import "SearchMovieObject.h"
 #import "SearchTableViewCell.h"
 
-@interface HomeViewController () <GetMovieListDelegate, UISearchBarDelegate, UITableViewDelegate, UITableViewDataSource, SearchMovieDelegate>
+@interface HomeViewController () <GetMovieListDelegate, UISearchBarDelegate, UITableViewDelegate, UITableViewDataSource, SearchMovieDelegate, MovieTableViewCellDelegate>
 
 @property (nonatomic) BOOL isEditing;
 @property (nonatomic, strong) NSString *searchString;
@@ -85,6 +85,7 @@
     [self.tableView setDelegate:self];
     [self.tableView setDataSource:self];
     [self.tableView setBackgroundColor:[UIColor whiteColor]];
+    [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
     [self.view addSubview:self.tableView];
 }
 
@@ -111,11 +112,19 @@
     }
     else {
         if (self.getMoviesList.moviesArray.count > 0) {
-            if (self.getMoviesList.moviesArray.count < self.getMoviesList.totalResult.integerValue) {
-                return self.getMoviesList.moviesArray.count + 1;
+            NSInteger count = 0;
+            if (self.getMoviesList.moviesArray.count %2 == 0) {
+                count = self.getMoviesList.moviesArray.count;
             }
             else {
-                return self.getMoviesList.moviesArray.count;
+                count = self.getMoviesList.moviesArray.count + 1;
+            }
+            
+            if (self.getMoviesList.moviesArray.count < self.getMoviesList.totalResult.integerValue) {
+                return count + 1;
+            }
+            else {
+                return count;
             }
         }
     }
@@ -138,12 +147,31 @@
         }
     }
     else {
-        if (indexPath.row >= self.getMoviesList.moviesArray.count && self.getMoviesList.moviesArray.count < self.getMoviesList.totalResult.integerValue) {
+        NSInteger count = 0;
+        if (self.getMoviesList.moviesArray.count %2 == 0) {
+            count = self.getMoviesList.moviesArray.count/2;
+        }
+        else {
+            count = self.getMoviesList.moviesArray.count/2 + 1;
+        }
+        
+        if (indexPath.row >= count && self.getMoviesList.moviesArray.count < self.getMoviesList.totalResult.integerValue) {
             return 100;
         }
         else {
-            Movie *movie = [self.getMoviesList.moviesArray objectAtIndex:indexPath.row];
-            return [MovieTableViewCell getHeightForMovie:movie];
+            
+            NSInteger index = 0;
+            if (indexPath.row > 0) {
+                index = indexPath.row *2;
+            }
+            
+            Movie *movie1 = [self.getMoviesList.moviesArray objectAtIndex:index];
+            Movie *movie2;
+            if (index + 1 < self.getMoviesList.moviesArray.count - 1) {
+                movie2 = [self.getMoviesList.moviesArray objectAtIndex:index + 1];
+            }
+            
+            return [MovieTableViewCell getHeightForMovie1:movie1 movie2:movie2];
         }
     }
     return 0.0f;
@@ -178,7 +206,15 @@
         }
     }
     else {
-        if (indexPath.row >= self.getMoviesList.moviesArray.count && self.getMoviesList.moviesArray.count < self.getMoviesList.totalResult.integerValue) {
+        NSInteger count = 0;
+        if (self.getMoviesList.moviesArray.count %2 == 0) {
+            count = self.getMoviesList.moviesArray.count/2;
+        }
+        else {
+            count = self.getMoviesList.moviesArray.count/2 + 1;
+        }
+        
+        if (indexPath.row >= count && self.getMoviesList.moviesArray.count < self.getMoviesList.totalResult.integerValue) {
             UILoaderTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"LoaderCell"];
             if (!cell) {
                 cell = [[UILoaderTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"LoaderCell"];
@@ -186,13 +222,23 @@
             return cell;
         }
         else {
-            Movie *movie = [self.getMoviesList.moviesArray objectAtIndex:indexPath.row];
+            NSInteger index = 0;
+            if (indexPath.row > 0) {
+                index = indexPath.row *2;
+            }
+            
+            Movie *movie1 = [self.getMoviesList.moviesArray objectAtIndex:index];
+            Movie *movie2;
+            if (index + 1 < self.getMoviesList.moviesArray.count - 1) {
+                movie2 = [self.getMoviesList.moviesArray objectAtIndex:index + 1];
+            }
             
             MovieTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MovieCell"];
             if (!cell) {
                 cell = [[MovieTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"MovieCell"];
             }
-            [cell setData:movie];
+            [cell setDelegate:self];
+            [cell setDataForMovie1:movie1 movie2:movie2];
             return cell;
         }
     }
@@ -207,12 +253,11 @@
             [self showDetailScreenForMovie:movie];
         }
     }
-    else {
-        if (indexPath.row < self.getMoviesList.moviesArray.count) {
-            Movie *movie = [self.getMoviesList.moviesArray objectAtIndex:indexPath.row];
-            [self showDetailScreenForMovie:movie];
-        }
-    }
+}
+
+#pragma mark MovieTableViewCellDelegate
+- (void)didTapMovie:(Movie *)movie {
+    [self showDetailScreenForMovie:movie];
 }
 
 - (void)showDetailScreenForMovie:(Movie *)movie {
