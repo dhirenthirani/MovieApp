@@ -96,7 +96,7 @@ CGFloat const imageSize = 100;
 
 + (CGFloat)getHeightForMovie:(Movie *)movie {
     CGFloat height = 0.0f;
-    CGFloat width = [[UIScreen mainScreen] bounds].size.height - 2*padding - 2*betweenPadding;
+    CGFloat width = [[UIScreen mainScreen] bounds].size.width - 2*padding - 2*betweenPadding;
     
     height += 2*padding;
     height += imageSize;

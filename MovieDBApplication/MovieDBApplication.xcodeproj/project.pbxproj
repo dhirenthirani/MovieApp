@@ -24,6 +24,8 @@
 		758DC0F41FCB415900D79DCF /* GetMovieList.m in Sources */ = {isa = PBXBuildFile; fileRef = 758DC0F31FCB415900D79DCF /* GetMovieList.m */; };
 		758DC0F81FCB49A400D79DCF /* MovieTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 758DC0F71FCB49A400D79DCF /* MovieTableViewCell.m */; };
 		758DC0FB1FCB618800D79DCF /* UILoaderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 758DC0FA1FCB618800D79DCF /* UILoaderTableViewCell.m */; };
+		758DC1101FCB6F8500D79DCF /* SearchMovieObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 758DC10F1FCB6F8500D79DCF /* SearchMovieObject.m */; };
+		758DC1251FCB903800D79DCF /* SearchTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 758DC1241FCB903800D79DCF /* SearchTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +81,10 @@
 		758DC0F71FCB49A400D79DCF /* MovieTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MovieTableViewCell.m; sourceTree = "<group>"; };
 		758DC0F91FCB618800D79DCF /* UILoaderTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UILoaderTableViewCell.h; sourceTree = "<group>"; };
 		758DC0FA1FCB618800D79DCF /* UILoaderTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UILoaderTableViewCell.m; sourceTree = "<group>"; };
+		758DC10E1FCB6F8500D79DCF /* SearchMovieObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchMovieObject.h; sourceTree = "<group>"; };
+		758DC10F1FCB6F8500D79DCF /* SearchMovieObject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchMovieObject.m; sourceTree = "<group>"; };
+		758DC1231FCB903800D79DCF /* SearchTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchTableViewCell.h; sourceTree = "<group>"; };
+		758DC1241FCB903800D79DCF /* SearchTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,6 +183,8 @@
 				758DC0E61FCB32CB00D79DCF /* Movie.m */,
 				758DC0F21FCB415900D79DCF /* GetMovieList.h */,
 				758DC0F31FCB415900D79DCF /* GetMovieList.m */,
+				758DC10E1FCB6F8500D79DCF /* SearchMovieObject.h */,
+				758DC10F1FCB6F8500D79DCF /* SearchMovieObject.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -199,6 +207,8 @@
 				758DC0F71FCB49A400D79DCF /* MovieTableViewCell.m */,
 				758DC0F91FCB618800D79DCF /* UILoaderTableViewCell.h */,
 				758DC0FA1FCB618800D79DCF /* UILoaderTableViewCell.m */,
+				758DC1231FCB903800D79DCF /* SearchTableViewCell.h */,
+				758DC1241FCB903800D79DCF /* SearchTableViewCell.m */,
 			);
 			path = CustomCells;
 			sourceTree = "<group>";
@@ -343,8 +353,10 @@
 				758DC0E31FCB32A700D79DCF /* GetMovieDetail.m in Sources */,
 				758DC0DB1FCB2A6200D79DCF /* BaseViewController.m in Sources */,
 				758DC0B71FCB29BB00D79DCF /* main.m in Sources */,
+				758DC1101FCB6F8500D79DCF /* SearchMovieObject.m in Sources */,
 				758DC0F81FCB49A400D79DCF /* MovieTableViewCell.m in Sources */,
 				758DC0A91FCB29BB00D79DCF /* AppDelegate.m in Sources */,
+				758DC1251FCB903800D79DCF /* SearchTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
