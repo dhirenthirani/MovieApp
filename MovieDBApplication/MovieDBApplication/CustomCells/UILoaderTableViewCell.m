@@ -28,7 +28,7 @@
 }
 
 - (void)createViews {
-    self.loader = [[UIActivityIndicatorView alloc] init];
+    self.loader = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
     [self.loader setHidesWhenStopped:YES];
     [self.loader startAnimating];
     [self.contentView addSubview:self.loader];
@@ -36,6 +36,8 @@
 
 - (void)layoutSubviews {
     [super layoutSubviews];
+    
+    [self.loader setFrame:self.contentView.frame];
     
     [self.loader setCenter:self.contentView.center];
 }

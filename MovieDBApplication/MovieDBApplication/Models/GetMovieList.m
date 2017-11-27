@@ -9,22 +9,44 @@
 #import "GetMovieList.h"
 #import "Movie.h"
 
+@interface GetMovieList()
+
+@property (nonatomic, strong) NSMutableDictionary *defaultParams;
+
+@end
+
 @implementation GetMovieList
 
 - (instancetype)init {
     self = [super init];
     if (self) {
         self.moviesArray = [[NSMutableArray alloc] init];
+        self.defaultParams = [[NSMutableDictionary alloc] init];
     }
     return self;
 }
 
-- (void)getMovieList {
-    [self getMovieListWithParams:nil];
+- (void)getHighestRatedMovies {
+    [self.defaultParams setObject:@"vote_average.desc" forKey:@"sort_by"];
+    
+    [self getMovieListWithParams:[self getStringFromDictionary:self.defaultParams]];
+}
+
+- (void)getPopularMovieList {
+    [self.defaultParams setObject:@"popularity.desc" forKey:@"sort_by"];
+    
+    [self getMovieListWithParams:[self getStringFromDictionary:self.defaultParams]];
+}
+
+- (void)clearData {
+    [self.moviesArray removeAllObjects];
+    self.page = @(1);
+    self.totalResult = @(0);
+    self.totalPage = @(0);
 }
 
 - (void)loadMoreResults {
-    NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *params = [[NSMutableDictionary alloc] initWithDictionary:self.defaultParams];
     [params setObject:@(self.page.integerValue + 1) forKey:@"page"];
     
     [self getMovieListWithParams:[self getStringFromDictionary:params]];

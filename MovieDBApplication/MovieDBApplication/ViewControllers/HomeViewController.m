@@ -46,7 +46,7 @@
     
     [self initialiseApiWrapper];
     
-    [self getMovieList];
+    [self getPopularMovieList];
 }
 
 #pragma mark ResgisterForNotification
@@ -67,6 +67,10 @@
 
 - (void)createHeader {
     [self.navigationItem setTitle:@"Movies"];
+    
+    UIBarButtonItem *barButton = [[UIBarButtonItem alloc] initWithTitle:@"Sort" style:UIBarButtonItemStyleDone target:self action:@selector(didTapSortButton)];
+    
+    [self.navigationItem setRightBarButtonItem:barButton];
 }
 
 - (void)createSearchBar {
@@ -212,7 +216,7 @@
 }
 
 - (void)showDetailScreenForMovie:(Movie *)movie {
-    MovieDetailViewController *movieDetailVC = [[MovieDetailViewController alloc] init];
+    MovieDetailViewController *movieDetailVC = [[MovieDetailViewController alloc] initWithMovieId:movie.movieId];
     [self.navigationController pushViewController:movieDetailVC animated:YES];
 }
 
@@ -274,9 +278,14 @@
     [self.searchObject setDelegate:self];
 }
 
-- (void)getMovieList {
+- (void)getPopularMovieList {
     [self showLoader];
-    [self.getMoviesList getMovieList];
+    [self.getMoviesList getPopularMovieList];
+}
+
+- (void)getHighestRatedMovieList {
+    [self showLoader];
+    [self.getMoviesList getHighestRatedMovies];
 }
 
 - (void)loadMoreMovieList {
@@ -309,6 +318,27 @@
 
 - (void)movieSearchFailedWithError:(NSError *)error {
     [self.tableView reloadData];
+}
+
+- (void)didTapSortButton {
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Sort" message:nil preferredStyle:UIAlertControllerStyleActionSheet];
+    
+    UIAlertAction *popularAction = [UIAlertAction actionWithTitle:@"Most Popular" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        [self getPopularMovieList];
+    }];
+    UIAlertAction *ratedAction = [UIAlertAction actionWithTitle:@"Highest Rated" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        [self getHighestRatedMovieList];
+    }];
+    
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+        
+    }];
+    
+    [alertController addAction:popularAction];
+    [alertController addAction:ratedAction];
+    [alertController addAction:cancelAction];
+    
+    [self presentViewController:alertController animated:YES completion:nil];
 }
 
 - (void)didReceiveMemoryWarning {

@@ -10,4 +10,6 @@
 
 @interface MovieDetailViewController : BaseViewController
 
+- (instancetype)initWithMovieId:(NSNumber *)movieId;
+
 @end

@@ -26,7 +26,10 @@
 
 @property (nonatomic, weak) id<GetMovieListDelegate> delegate;
 
-- (void)getMovieList;
+- (void)getHighestRatedMovies;
+
+- (void)getPopularMovieList;
+
 - (void)loadMoreResults;
 
 @end

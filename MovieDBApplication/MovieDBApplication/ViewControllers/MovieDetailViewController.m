@@ -30,10 +30,19 @@
 
 @property (nonatomic, strong) GetMovieDetail *getMovieDetailObject;
 
+@property (nonatomic, strong) NSNumber *movieId;
+
 @end
 
 @implementation MovieDetailViewController
 
+- (instancetype)initWithMovieId:(NSNumber *)movieId {
+    self = [super init];
+    if (self) {
+        self.movieId = movieId;
+    }
+    return self;
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -153,7 +162,7 @@
     
     self.getMovieDetailObject = [[GetMovieDetail alloc] init];
     [self.getMovieDetailObject setDelegate:self];
-    [self.getMovieDetailObject getMovieForMovieId:@(501)];
+    [self.getMovieDetailObject getMovieForMovieId:self.movieId];
 }
 
 #pragma mark GetMovieDelegate
