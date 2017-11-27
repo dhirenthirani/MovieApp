@@ -88,11 +88,13 @@ NSInteger const fontSize = 15;
     self.movieImageView1 = [[UIImageView alloc] init];
     [self.movieImageView1 setBackgroundColor:[UIColor grayColor]];
     [self.movieImageView1 setContentMode:UIViewContentModeScaleAspectFill];
+    [self.movieImageView1 setClipsToBounds:YES];
     [self.containerView1 addSubview:self.movieImageView1];
     
     self.movieImageView2 = [[UIImageView alloc] init];
     [self.movieImageView2 setBackgroundColor:[UIColor grayColor]];
     [self.movieImageView2 setContentMode:UIViewContentModeScaleAspectFill];
+    [self.movieImageView2 setClipsToBounds:YES];
     [self.containerView2 addSubview:self.movieImageView2];
 }
 

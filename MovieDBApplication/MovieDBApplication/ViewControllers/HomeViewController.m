@@ -81,11 +81,10 @@
 }
 
 - (void)createTableView {
-    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, BOTTOM(self.searchBar), W(self.view), H(self.view) - BOTTOM(self.searchBar)) style:UITableViewStylePlain];
+    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, BOTTOM(self.searchBar), W(self.view), H(self.view) - ([Constants navigationBarHeight] + 50)) style:UITableViewStylePlain];
     [self.tableView setDelegate:self];
     [self.tableView setDataSource:self];
     [self.tableView setBackgroundColor:[UIColor whiteColor]];
-    [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
     [self.view addSubview:self.tableView];
 }
 
@@ -148,7 +147,7 @@
     }
     else {
         NSInteger count = 0;
-        if (self.getMoviesList.moviesArray.count %2 == 0) {
+        if (self.getMoviesList.moviesArray.count % 2 == 0) {
             count = self.getMoviesList.moviesArray.count/2;
         }
         else {
@@ -158,7 +157,7 @@
         if (indexPath.row >= count && self.getMoviesList.moviesArray.count < self.getMoviesList.totalResult.integerValue) {
             return 100;
         }
-        else {
+        else if (indexPath.row < count) {
             
             NSInteger index = 0;
             if (indexPath.row > 0) {
@@ -221,7 +220,7 @@
             }
             return cell;
         }
-        else {
+        else if (indexPath.row < count) {
             NSInteger index = 0;
             if (indexPath.row > 0) {
                 index = indexPath.row *2;
