@@ -27,12 +27,14 @@
 }
 
 - (void)getHighestRatedMovies {
+    [self clearData];
     [self.defaultParams setObject:@"vote_average.desc" forKey:@"sort_by"];
     
     [self getMovieListWithParams:[self getStringFromDictionary:self.defaultParams]];
 }
 
 - (void)getPopularMovieList {
+    [self clearData];
     [self.defaultParams setObject:@"popularity.desc" forKey:@"sort_by"];
     
     [self getMovieListWithParams:[self getStringFromDictionary:self.defaultParams]];

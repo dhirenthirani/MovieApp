@@ -32,6 +32,8 @@
 
 @property (nonatomic, strong) NSNumber *movieId;
 
+@property (nonatomic, strong) UILabel *statusLabel;
+
 @end
 
 @implementation MovieDetailViewController
@@ -62,6 +64,7 @@
     [self.view addSubview:self.scrollView];
     
     [self createImageView];
+    [self createStatusLabel];
     [self createTitleLabel];
     [self createTagLabel];
     [self createSynopsis];
@@ -88,8 +91,19 @@
 //    [self.imageView.layer insertSublayer:gradient atIndex:0];
 }
 
+- (void)createStatusLabel {
+    self.statusLabel = [[UILabel alloc] initWithFrame:CGRectMake(SIDE_PADDING, BOTTOM(self.imageView) + SIDE_PADDING, 0, 0)];
+    [self.statusLabel setText:self.getMovieDetailObject.movie.movieStatus];
+    [self.statusLabel setFont:[UIFont boldSystemFontOfSize:17]];
+    [self.statusLabel setNumberOfLines:0];
+    [self.statusLabel sizeToFit];
+    [self.statusLabel setTextColor:[UIColor blueColor]];
+    [self.statusLabel setBackgroundColor:[UIColor yellowColor]];
+    [self.scrollView addSubview:self.statusLabel];
+}
+
 - (void)createTitleLabel {
-    self.titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(SIDE_PADDING, BOTTOM(self.imageView) + SIDE_PADDING, W(self.scrollView) - 2*SIDE_PADDING, 0)];
+    self.titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(SIDE_PADDING, BOTTOM(self.statusLabel) + SIDE_PADDING, W(self.scrollView) - 2*SIDE_PADDING, 0)];
     [self.titleLabel setText:self.getMovieDetailObject.movie.name];
     [self.titleLabel setFont:[UIFont boldSystemFontOfSize:25]];
     [self.titleLabel setTextColor:[UIColor darkTextColor]];
